@@ -14,7 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
     private float groundLevel = -3.0f;
 
     // ジャンプの速度の減衰（追加）
-    private float dump = 0.8f;
+    private float dump = 0.3f;
 
     // ジャンプの速度（追加）
     float jumpVelocity = 25;
@@ -41,6 +41,18 @@ public class NewBehaviourScript : MonoBehaviour
         this.animator.SetBool("isGround", isGround);
         // ジャンプ状態のときにはボリュームを0にする（追加）
         GetComponent<AudioSource>().volume = (isGround) ? 1 : 0;
+
+        AudioSource audioSource = GetComponent<AudioSource>(); // AudioSourceコンポーネントを取得
+
+        if (audioSource != null) // AudioSourceコンポーネントが存在するか確認
+        {
+            // AudioSourceコンポーネントを使用するコード
+            audioSource.Play(); // 例：オーディオを再生
+        }
+        else
+        {
+            Debug.LogError("AudioSource component not found on " + gameObject.name); // エラーメッセージを表示
+        }
 
         // 着地状態でクリックされた場合（追加）
         if (Input.GetMouseButtonDown(0) && isGround)
