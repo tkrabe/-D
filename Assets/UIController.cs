@@ -8,16 +8,12 @@ public class UIController : MonoBehaviour
 {
     // ゲームオーバーテキスト
     private GameObject gameOverText;
-
     // 走行距離テキスト
     private GameObject runLengthText;
-
     // 走った距離
     private float len = 0;
-
     // 走る速度
     private float speed = 5f;
-
     // ゲームオーバーの判定
     private bool isGameOver = false;
     // Start is called before the first frame update

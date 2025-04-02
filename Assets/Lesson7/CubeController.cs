@@ -5,7 +5,7 @@ using UnityEngine;
 public class CubeController : MonoBehaviour
 {
     // キューブの移動速度
-    private float speed = -12;
+    private float speed = -10;
 
     // 消滅位置
     private float deadLine = -10;
